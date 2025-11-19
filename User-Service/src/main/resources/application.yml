@@ -54,7 +54,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://20.193.253.243:8761/eureka/
   instance:
     prefer-ip-address: true # Use IP address instead of hostname
     # This forces a unique ID (e.g., "User-Service:abc123")

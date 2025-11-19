@@ -5,6 +5,7 @@
 
 # --- Java / Maven Build Files ---
 target/
+**/target/
 *.class
 *.jar
 *.war
