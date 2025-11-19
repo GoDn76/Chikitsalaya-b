@@ -18,4 +18,4 @@ eureka:
   client:
     service-url:
       # This address is still correct
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
