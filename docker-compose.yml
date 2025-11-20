@@ -23,7 +23,9 @@ services:
 
   # --- 2. API GATEWAY ---
   gateway-service:
-    # ... build/image ...
+    build: 
+      context: ./GatewayService
+      dockerfile: dockerfile  # Your screenshot shows lowercase 'd'
     container_name: gateway-service
     network_mode: "host"  # <--- Enables access to SSH Tunnel
     environment:
