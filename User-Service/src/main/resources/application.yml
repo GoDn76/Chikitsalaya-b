@@ -2,8 +2,7 @@
 # SERVICE PORT & NAME
 # -----------------------------------------------------------------
 server:
-  port: 0 # '0' tells Spring Boot to find a random, free port.
-  # This is microservice best practice.
+  port: 8080
 
 spring:
   # -----------------------------------------------------------------
@@ -51,13 +50,17 @@ spring:
 # -----------------------------------------------------------------
 # EUREKA CLIENT CONFIGURATION
 # -----------------------------------------------------------------
+
 eureka:
   client:
     service-url:
-      defaultZone: http://20.193.253.243:8761/eureka/
+      defaultZone: http://godn-gw.duckdns.org:8761/eureka/
   instance:
-    prefer-ip-address: true # Use IP address instead of hostname
+#    prefer-ip-address: true # Use IP address instead of hostname
     # This forces a unique ID (e.g., "User-Service:abc123")
+    hostname: localhost # <--- Trick Eureka into using the tunnel
+    non-secure-port: 8080
+    prefer-ip-address: false
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 
 
